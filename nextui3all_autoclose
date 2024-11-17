@@ -1,0 +1,323 @@
+if game.CoreGui:FindFirstChild('NextUIv3') then game.CoreGui:FindFirstChild('NextUIv3'):Destroy() end 
+local a local b,c,d,e,f,g,h,i,j,k,m,n,q,r,s,t,u,v,w,x={function()local b,c,d=a(1)local e return(function(...)local f,g,h
+,i,j=d(c.elements),d(c.tools),game:GetService'UserInputService',game:GetService'TweenService',{Connections={},Flags={}}
+local k,l=g.Create,g.AddConnection local m=k('ScreenGui',{Parent=game.CoreGui,ResetOnSpawn=false,Name='NextUIv3'})
+shared.NapkinGUILibrary=m function j.IsRunning(n)return m.Parent==game.CoreGui end task.spawn(
+function()while(j:IsRunning())do task.wait()end for n,o in pairs(j.Connections)do o:Disconnect()end end)local function n
+(o,p)pcall(function()local q,r,s,t=false l(o.InputBegan,function(u)if u.UserInputType==Enum.UserInputType.MouseButton1
+or u.UserInputType==Enum.UserInputType.Touch then q=true s=u.Position t=p.Position l(u.Changed,function()if u.
+UserInputState==Enum.UserInputState.End then q=false end end)end end)l(o.InputChanged,function(u)if u.UserInputType==
+Enum.UserInputType.MouseMovement then r=u end end)l(h.InputChanged,function(u)if(u.UserInputType==Enum.UserInputType.
+MouseMovement or u.UserInputType==Enum.UserInputType.Touch)and q then local v=u.Position-s p.Position=UDim2 .new(t.X.
+Scale,t.X.Offset+v.X,t.Y.Scale,t.Y.Offset+v.Y)end end)end)end function j.SafeCallback(o,p,...)if not p then return end
+local q,r=pcall(p,...)if not q then local s,t=r:find':%d+: 'if not t then return print(`Error: {r}`)end return print(`Error: {
+r:sub(t+1)}`)end end local o={}o.__index=o o.__namecall=function(p,q,...)return o[q](...)end for p,q in ipairs(f)do o[
+'Add'..q.__type]=function(r,s)r.Library=j q.Container=r.Container q.Type=r.Type q.Library=r.Library return q.New(s,r)end
+end j.Elements=o print(o)function j.Load(r)r=r or'Title'local s,t=false,k('TextButton',{BackgroundTransparency=1,
+Position=UDim2 .new(1,-34,0,4),Size=UDim2 .new(1,-8,1,-8),SizeConstraint=Enum.SizeConstraint.RelativeYY,Text=''},{k(
+'Frame',{AnchorPoint=Vector2 .new(0.5,0.5),BackgroundColor3=Color3 .fromRGB(38,38,38),BackgroundTransparency=1,Position=
+UDim2 .new(0.5,0,0.5,0),Size=UDim2 .new(0.8,0,0.8,0),Name='Hover'},{k('UICorner',{CornerRadius=UDim.new(0,8)})}),k(
+'ImageLabel',{BackgroundTransparency=1,Position=UDim2 .new(0.5,-9,0.5,-9),Size=UDim2 .new(0,18,0,18),Image=
+'rbxassetid://6235536018',ImageColor3=Color3 .fromRGB(180,180,180),ScaleType=Enum.ScaleType.Crop,Name='Ico'})})l(t.
+MouseEnter,function()i:Create(t.Hover,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Size=UDim2 .
+new(1,0,1,0),BackgroundTransparency=0}):Play()i:Create(t.Ico,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.
+EasingDirection.Out),{ImageColor3=Color3 .fromRGB(255,0,68)}):Play()end)l(t.MouseLeave,function()i:Create(t.Hover,
+TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Size=UDim2 .new(0.8,0,0.8,0),BackgroundTransparency
+=1}):Play()i:Create(t.Ico,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{ImageColor3=Color3 .
+fromRGB(180,180,180)}):Play()end)l(t.MouseButton1Click,function()shared.NapkinGUILibrary:Destroy()end)local u=k(
+'TextButton',{BackgroundTransparency=1,Position=UDim2 .new(0,4,0,4),Size=UDim2 .new(1,-8,1,-8),SizeConstraint=Enum.
+SizeConstraint.RelativeYY,Text=''},{k('Frame',{AnchorPoint=Vector2 .new(0.5,0.5),BackgroundColor3=Color3 .fromRGB(38,38,
+38),BackgroundTransparency=1,Position=UDim2 .new(0.5,0,0.5,0),Size=UDim2 .new(0.8,0,0.8,0),Name='Hover'},{k('UICorner',{
+CornerRadius=UDim.new(0,8)})}),k('ImageLabel',{BackgroundTransparency=1,Position=UDim2 .new(0.5,-8,0.5,-8),Size=UDim2 .
+new(0,16,0,16),Image='rbxassetid://7072718840',ImageColor3=Color3 .fromRGB(180,180,180),ScaleType=Enum.ScaleType.Crop,
+Name='Ico'})})l(u.MouseEnter,function()i:Create(u.Hover,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.
+Out),{Size=UDim2 .new(1,0,1,0),BackgroundTransparency=0}):Play()i:Create(u.Ico,TweenInfo.new(0.25,Enum.EasingStyle.Quint
+,Enum.EasingDirection.Out),{ImageColor3=Color3 .fromRGB(255,255,255)}):Play()end)l(u.MouseLeave,function()i:Create(u.
+Hover,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Size=UDim2 .new(0.8,0,0.8,0),
+BackgroundTransparency=1}):Play()i:Create(u.Ico,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{
+ImageColor3=Color3 .fromRGB(180,180,180)}):Play()end)local v=k('Frame',{BackgroundColor3=Color3 .fromRGB(27,27,27),
+BorderSizePixel=0,Position=UDim2 .new(-1,-5,0,0),Size=UDim2 .new(1,0,1,0)},{k('UICorner',{CornerRadius=UDim.new(0,5)}),
+k('Frame',{BackgroundColor3=Color3 .fromRGB(27,27,27),BorderSizePixel=0,Position=UDim2 .new(1,-5,0,0),Size=UDim2 .new(0,
+5,1,0)}),k('Frame',{BackgroundColor3=Color3 .fromRGB(27,27,27),BorderSizePixel=0,Size=UDim2 .new(1,0,0,5)}),k('Frame',{
+BackgroundColor3=Color3 .fromRGB(50,50,50),BackgroundTransparency=0.5,BorderSizePixel=0,Position=UDim2 .new(1,-1,0,0),
+Size=UDim2 .new(0,1,1,0)}),k('Frame',{BackgroundColor3=Color3 .fromRGB(255,255,255),BackgroundTransparency=1,Size=UDim2
+.new(1,0,1,0),Name='Container'},{k('UIPadding',{PaddingBottom=UDim.new(0,10),PaddingTop=UDim.new(0,10)}),k'UIListLayout'
+})})local w=k('Frame',{AnchorPoint=Vector2 .new(0.5,0.5),BackgroundColor3=Color3 .fromRGB(25,25,25),Position=UDim2 .new(
+0.5,0,0.5,0),Size=UDim2 .new(0,480,0,380),Parent=m},{k('UICorner',{CornerRadius=UDim.new(0,5)}),k('ImageLabel',{
+BackgroundTransparency=1,Position=UDim2 .new(0,-15,0,-15),Size=UDim2 .new(1,30,1,30),Image=
+'http://www.roblox.com/asset/?id=5554236805',ImageColor3=Color3 .fromRGB(10,10,10),ScaleType=Enum.ScaleType.Slice,
+SliceCenter=Rect.new(23,23,277,277)}),k('Folder',{Name='Container'}),k('TextButton',{Size=UDim2 .new(1,0,1,-38),Position
+=UDim2 .new(0,0,0,38),BackgroundColor3=Color3 .fromRGB(0,0,0),BackgroundTransparency=1,Text='',AutoButtonColor=false,
+Name='Darken',BorderSizePixel=0,Visible=false}),k('Frame',{BackgroundTransparency=1,BorderSizePixel=0,ClipsDescendants=
+true,Position=UDim2 .new(0,0,0,36),Size=UDim2 .new(0.4,0,1,-36)},{v}),k('Frame',{BackgroundColor3=Color3 .fromRGB(27,27,
+27),Size=UDim2 .new(1,0,0,38),Position=UDim2 .new(0,0,0,-1),Name='TopBar'},{k('UICorner',{CornerRadius=UDim.new(0,5)}),
+k('Frame',{BackgroundColor3=Color3 .fromRGB(27,27,27),BorderSizePixel=0,Position=UDim2 .new(0,0,1,-5),Size=UDim2 .new(1,
+0,0,5)}),k('Frame',{BackgroundColor3=Color3 .fromRGB(50,50,50),BackgroundTransparency=0.4,BorderSizePixel=0,Position=
+UDim2 .new(0,0,1,0),Size=UDim2 .new(1,0,0,1)}),k('TextLabel',{BackgroundTransparency=1,Size=UDim2 .new(1,0,1,0),Font=
+Enum.Font.Gotham,Text=r,TextColor3=Color3 .fromRGB(180,180,180),TextSize=14,RichText=true}),t,u})})shared.NapkinLibrary=
+w l(u.MouseButton1Click,function()s=not s i:Create(v,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out)
+,{Position=s and UDim2 .new(0,0,0,0)or UDim2 .new(-1,-5,0,0)}):Play()i:Create(w.Darken,TweenInfo.new(0.25,Enum.
+EasingStyle.Quint,Enum.EasingDirection.Out),{BackgroundTransparency=s and 0.8 or 1}):Play()w.Darken.Visible=s end)n(w.
+TopBar,w)local x,y={},d(c.components.tab):Init(w.Container)function x.AddTab(z,A)return y:New(A,v.Container)end function
+x.SelectTab(z,A)y:SelectTab(1)end return x end return j end)()end,[3]=function()local b,c,d=a(3)local e return(function(
+...)local f=d(c.Parent.Parent.tools)local g,h=f.Create,f.AddConnection return function(i,j)local k={}k.SectionContainer=
+g('Frame',{BackgroundTransparency=1,Position=UDim2 .new(0,0,0,16),Size=UDim2 .new(1,0,0,0),Name='Container'},{g(
+'UIListLayout',{Padding=UDim.new(0,6)})})k.SectionFrame=g('Frame',{BackgroundTransparency=1,Size=UDim2 .new(1,0,0,0),
+Parent=j},{g('TextLabel',{BackgroundTransparency=1,Size=UDim2 .new(1,-10,0,10),Font=Enum.Font.GothamSemibold,TextColor3=
+Color3 .fromRGB(165,165,165),TextSize=12,TextXAlignment=Enum.TextXAlignment.Left,Text=string.upper(i)}),k.
+SectionContainer})h(k.SectionContainer.UIListLayout:GetPropertyChangedSignal'AbsoluteContentSize',function()k.
+SectionContainer.Size=UDim2 .new(1,0,0,k.SectionContainer.UIListLayout.AbsoluteContentSize.Y)k.SectionFrame.Size=UDim2 .
+new(1,0,0,k.SectionContainer.UIListLayout.AbsoluteContentSize.Y+16)end)return k end end)()end,[4]=function()local b,c,d=
+a(4)local e return(function(...)local f,g,h,i,j=d(c.Parent.Parent.tools),game:GetService'UserInputService',game:
+GetService'TweenService',game:GetService'RunService',game:GetService'Players'.LocalPlayer local k,l,m,n,o=j:GetMouse(),
+game:GetService'HttpService',f.Create,f.AddConnection,{Window=nil,Tabs={},Containers={},SelectedTab=0,TabCount=0}
+function o.Init(p,q)o.Window=q return o end function o.New(p,q,r)local s,t=d(c.Parent.Parent),o.Window local u=s.
+Elements o.TabCount=o.TabCount+1 local v,w=o.TabCount,{Selected=false,Name=q,Type='Tab'}w.TabBtn=m('TextButton',{Parent=
+r,BackgroundColor3=Color3 .fromRGB(0,150,100),BackgroundTransparency=1,BorderSizePixel=0,Size=UDim2 .new(1,0,0,35),Text=
+'',AutoButtonColor=false},{m('TextLabel',{BackgroundTransparency=1,Position=UDim2 .new(0,10,0,0),Size=UDim2 .new(1,-10,1
+,0),Font=Enum.Font.Gotham,Text=q,TextColor3=Color3 .fromRGB(165,165,165),TextSize=14,TextXAlignment=Enum.TextXAlignment.
+Left,Name='Title'})})w.Container=m('ScrollingFrame',{Parent=o.Window,Size=UDim2 .new(1,0,1,-38),Position=UDim2 .new(0,0,
+0,38),BackgroundTransparency=1,Visible=false,MidImage='rbxassetid://7445543667',BottomImage='rbxassetid://7445542488',
+TopImage='rbxassetid://7445543667',ScrollBarImageColor3=Color3 .fromRGB(27,27,27),ScrollBarThickness=6,CanvasSize=UDim2
+.new(0,0,0,0),BorderSizePixel=0},{m('UIPadding',{PaddingBottom=UDim.new(0,14),PaddingTop=UDim.new(0,14),PaddingLeft=UDim
+.new(0,16),PaddingRight=UDim.new(0,16)}),m('UIListLayout',{Padding=UDim.new(0,12),SortOrder=Enum.SortOrder.LayoutOrder,
+VerticalAlignment=Enum.VerticalAlignment.Top})})n(w.Container.UIListLayout:GetPropertyChangedSignal'AbsoluteContentSize'
+,function()w.Container.CanvasSize=UDim2 .new(0,0,0,w.Container.UIListLayout.AbsoluteContentSize.Y+28)end)w.
+ContainerFrame=w.Container n(w.TabBtn.MouseButton1Click,function()o:SelectTab(v)end)o.Containers[v]=w.ContainerFrame o.
+Tabs[v]=w function w.AddSection(x,y)local z,A={Type='Section'},d(c.Parent.section)(y,w.Container)z.Container=A.
+SectionContainer setmetatable(z,u)return z end setmetatable(w,u)return w end function o.SelectTab(p,q)o.SelectedTab=q
+print(o.Tabs)for r,s in next,o.Tabs do h:Create(s.TabBtn,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.
+Out),{BackgroundTransparency=1}):Play()h:Create(s.TabBtn.Title,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.
+EasingDirection.Out),{TextColor3=Color3 .fromRGB(165,165,165)}):Play()s.Selected=false end h:Create(o.Tabs[q].TabBtn,
+TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{BackgroundTransparency=0}):Play()h:Create(o.Tabs[q]
+.TabBtn.Title,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{TextColor3=Color3 .fromRGB(255,255,
+255)}):Play()task.spawn(function()for t,u in pairs(o.Containers)do u.Visible=false end o.Containers[q].Visible=true end)
+end return o end)()end,[5]=function()local b,c,d=a(5)local e return(function(...)local f={}for g,h in next,c:
+GetChildren()do table.insert(f,d(h))end print(f)return f end)()end,[6]=function()local b,c,d=a(6)local e return(function
+(...)local f,g=game:GetService'TweenService',d(c.Parent.Parent.tools)local h,i,j,k=g.Create,g.AddConnection,g.Ripple,{}k
+.__index=k k.__type='Button'function k.New(l,m)assert(l.Title,'Button - Missing Title')l.Callback=l.Callback or function
+()end print(l)print(m)local n,o={},h('TextButton',{BackgroundColor3=Color3 .fromRGB(28,28,28),Size=UDim2 .new(1,0,0,32),
+Parent=m.Container,AutoButtonColor=false,ClipsDescendants=true,Text=''},{h('UICorner',{CornerRadius=UDim.new(0,5)})})
+local p=h('TextLabel',{Parent=o,BackgroundTransparency=1,Position=UDim2 .new(0,10,0,0),Size=UDim2 .new(1,-10,1,0),Font=
+Enum.Font.Gotham,TextColor3=Color3 .fromRGB(255,255,255),TextSize=13,TextXAlignment=Enum.TextXAlignment.Left,Text=l.
+Title})i(o.MouseEnter,function()f:Create(o,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{
+BackgroundColor3=Color3 .fromRGB(30,30,30)}):Play()end)i(o.MouseLeave,function()f:Create(o,TweenInfo.new(0.25,Enum.
+EasingStyle.Quint,Enum.EasingDirection.Out),{BackgroundColor3=Color3 .fromRGB(28,28,28)}):Play()end)i(o.MouseButton1Down
+,function()f:Create(o,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{BackgroundColor3=Color3 .
+fromRGB(33,33,33)}):Play()end)i(o.MouseButton1Up,function()f:Create(o,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.
+EasingDirection.Out),{BackgroundColor3=Color3 .fromRGB(30,30,30)}):Play()j(o)l.Callback()end)function n.Set(q,r)l.Name=r
+or'Button'p.Text=l.Name end function n.Visible(q,r)o.Visible=r end return n end return k end)()end,[7]=function()local b
+,c,d=a(7)local e return(function(...)local f,g=game:GetService'TweenService',game:GetService'Players'.LocalPlayer local
+h,i=g:GetMouse(),d(c.Parent.Parent.tools)local j,k,l=i.Create,i.AddConnection,i.Ripple local function m(n)local o=j(
+'ImageLabel',{Parent=n,BackgroundColor3=Color3 .fromRGB(255,255,255),BackgroundTransparency=1,Image=
+'rbxassetid://266543268',ImageColor3=Color3 .fromRGB(210,210,210),ImageTransparency=0.88})o.Position=UDim2 .new(0,h.X-o.
+AbsolutePosition.X,0,h.Y-o.AbsolutePosition.Y)local p=n.AbsoluteSize.X/1.5 f:Create(o,TweenInfo.new(0.5),{Position=UDim2
+.fromScale(math.clamp(h.X-n.AbsolutePosition.X,0,n.AbsoluteSize.X)/n.AbsoluteSize.X,n,math.clamp(h.Y-n.AbsolutePosition.
+Y,0,n.AbsoluteSize.Y)/n.AbsoluteSize.Y)-UDim2 .fromOffset(p/2,p/2),ImageTransparency=1,Size=UDim2 .fromOffset(p,p)}):
+Play()spawn(function()wait(0.5)o:Destroy()end)end local n={}n.__index=n n.__type='Dropdown'function n.New(o,p)o=o or{}o.
+Name=o.Name or'Dropdown'o.Options=o.Options or{}o.Default=o.Default or''o.IgnoreFirst=o.IgnoreFirst or false o.Multiple=
+o.Multiple or false o.MaxOptions=o.MaxOptions or math.huge o.Callback=o.Callback or function()end local q,r,s={Value=o.
+Default,Options=o.Options,Buttons={},Toggled=false,Type='Dropdown'},5,j'UIListLayout'local t,u,v=j('ScrollingFrame',{
+Position=UDim2 .new(0,0,0,32),Size=UDim2 .new(1,0,1,-32),BackgroundTransparency=1,MidImage='rbxassetid://7445543667',
+BottomImage='rbxassetid://7445542488',TopImage='rbxassetid://7445543667',ScrollBarImageColor3=Color3 .fromRGB(35,35,35),
+ScrollBarThickness=4,CanvasSize=UDim2 .new(0,0,0,0),BorderSizePixel=0},{s}),j('ImageLabel',{Image=
+'rbxassetid://7072706745',BackgroundTransparency=1,ImageColor3=Color3 .fromRGB(165,165,165),Size=UDim2 .new(0,16,0,16),
+Position=UDim2 .new(1,-24,0.5,-8)}),j('TextLabel',{BackgroundTransparency=1,Position=UDim2 .new(0,10,0,0),Size=UDim2 .
+new(1,-38,1,0),Font=Enum.Font.Gotham,TextColor3=Color3 .fromRGB(255,255,255),TextSize=13,TextTransparency=0.4,
+TextXAlignment=Enum.TextXAlignment.Right,Text=''})local w=j('TextButton',{BackgroundTransparency=1,Size=UDim2 .new(1,0,0
+,32),AutoButtonColor=false,ClipsDescendants=true,Text=''},{j('UICorner',{CornerRadius=UDim.new(0,5)}),j('TextLabel',{
+BackgroundTransparency=1,Position=UDim2 .new(0,10,0,0),Size=UDim2 .new(1,-10,1,0),Font=Enum.Font.Gotham,TextColor3=
+Color3 .fromRGB(255,255,255),TextSize=13,TextXAlignment=Enum.TextXAlignment.Left,Text=o.Name}),v,u})local x=j(
+'TextButton',{BackgroundColor3=Color3 .fromRGB(28,28,28),Size=UDim2 .new(1,0,0,32),Parent=p.Container,ClipsDescendants=
+true,Text='',AutoButtonColor=false},{j('UICorner',{CornerRadius=UDim.new(0,5)}),w,t,j('Frame',{Size=UDim2 .new(1,0,0,1),
+Position=UDim2 .new(0,0,0,32),ClipsDescendants=true,BackgroundColor3=Color3 .fromRGB(50,50,50),BackgroundTransparency=
+0.4,BorderSizePixel=0})})k(s:GetPropertyChangedSignal'AbsoluteContentSize',function()t.CanvasSize=UDim2 .new(0,0,0,s.
+AbsoluteContentSize.Y)end)local function y(z)for A,B in pairs(z)do local C=j('TextButton',{Parent=t,Size=UDim2 .new(1,0,
+0,26),BackgroundTransparency=1,ClipsDescendants=true,AutoButtonColor=false,BackgroundColor3=Color3 .fromRGB(36,36,36),
+Text=''},{j('UICorner',{CornerRadius=UDim.new(0,5)}),j('TextLabel',{BackgroundTransparency=1,Position=UDim2 .new(0,10,0,
+0),Size=UDim2 .new(1,-10,1,0),Font=Enum.Font.Gotham,TextColor3=Color3 .fromRGB(255,255,255),TextSize=13,TextXAlignment=
+Enum.TextXAlignment.Left,Text=B,Name='Title'})})k(C.MouseButton1Click,function()q:Set(B)m(C)end)q.Buttons[B]=C end end
+function q.Refresh(z,A,B)if B then for C,D in pairs(q.Buttons)do D:Destroy()end table.clear(q.Options)table.clear(q.
+Buttons)end q.Options=A y(q.Options)end function q.Set(z,A,B)if o.Multiple then if type(q.Value)~='table'then q.Value={q
+.Value}end if table.find(q.Value,A)then table.remove(q.Value,table.find(q.Value,A))else if#q.Value<(o.MaxOptions or math
+.huge)then table.insert(q.Value,A)end end else q.Value=A end local C=o.Multiple and true or table.find(q.Options,A)if o.
+Multiple then for D,E in pairs(q.Value)do if not table.find(q.Options,E)then table.remove(q.Value,D)end end if#q.Value<1
+then C=false end end if not C then q.Value=o.Multiple and{}or'...'v.Text='...'for D,E in pairs(q.Buttons)do f:Create(E,
+TweenInfo.new(0.15,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{BackgroundTransparency=1}):Play()f:Create(E.Title,
+TweenInfo.new(0.15,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{TextTransparency=0.4}):Play()end return end v.Text=o
+.Multiple and table.concat(q.Value,', ')or q.Value for D,E in pairs(q.Buttons)do if(o.Multiple and table.find(q.Value,D)
+)or(not o.Multiple and D==A)then f:Create(E,TweenInfo.new(0.15,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{
+BackgroundTransparency=0}):Play()f:Create(E.Title,TweenInfo.new(0.15,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{
+TextTransparency=0}):Play()else f:Create(E,TweenInfo.new(0.15,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{
+BackgroundTransparency=1}):Play()f:Create(E.Title,TweenInfo.new(0.15,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{
+TextTransparency=0.4}):Play()end end if not B then return o.Callback(q.Value)end end k(w.MouseButton1Click,function()q.
+Toggled=not q.Toggled f:Create(u,TweenInfo.new(0.15,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Rotation=q.Toggled
+and 90 or 0}):Play()if#q.Options>r then f:Create(x,TweenInfo.new(0.15,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{
+Size=q.Toggled and UDim2 .new(1,0,0,32+(r*26))or UDim2 .new(1,0,0,32)}):Play()else f:Create(x,TweenInfo.new(0.15,Enum.
+EasingStyle.Quad,Enum.EasingDirection.Out),{Size=q.Toggled and UDim2 .new(1,0,0,s.AbsoluteContentSize.Y+32)or UDim2 .
+new(1,0,0,32)}):Play()end end)function q.Visible(z,A)x.Visible=A end q:Refresh(q.Options,false)q:Set(q.Value,o.
+IgnoreFirst)return q end return n end)()end,[8]=function()local b,c,d=a(8)local e return(function(...)local f,g,h=game:
+GetService'UserInputService',game:GetService'TweenService',game:GetService'Players'.LocalPlayer local i,j=h:GetMouse(),
+d(c.Parent.Parent.tools)local k,m,n=j.Create,j.AddConnection,j.Ripple local function o(p,q)local r=math.floor(p/q+(math.
+sign(p)*0.5))*q if r<0 then r=r+q end return r end local p={}p.__index=p p.__type='Slider'function p.New(q,r)q.Name=q.
+Name or'Slider'q.Min=q.Min or 10 q.Max=q.Max or 20 q.Increment=q.Increment or 1 q.Default=q.Default or 0 q.IgnoreFirst=q
+.IgnoreFirst or false q.TextBoxValue=q.TextBoxValue or false q.Callback=q.Callback or function()end local s,t,u={Value=q
+.Default,Type='Slider'},false if q.TextBoxValue then u=k('TextBox',{CursorPosition=-1,Font=Enum.Font.Gotham,
+PlaceholderColor3=Color3 .fromRGB(210,210,210),PlaceholderText='Value Here!',Text='',TextColor3=Color3 .fromRGB(255,255,
+255),TextSize=13,TextXAlignment=Enum.TextXAlignment.Right,AnchorPoint=Vector2 .new(1,0),AutomaticSize=Enum.AutomaticSize
+.X,BackgroundColor3=Color3 .fromRGB(36,36,36),Position=UDim2 .new(1,-10,0,5),Size=UDim2 .new(0,50,0,20),Visible=true,
+Parent=workspace},{k('UICorner',{CornerRadius=UDim.new(0,5)}),k('UIPadding',{PaddingLeft=UDim.new(0,5),PaddingRight=UDim
+.new(0,5)})})else u=k('TextLabel',{BackgroundTransparency=1,AnchorPoint=Vector2 .new(1,0),Position=UDim2 .new(1,-10,0,5)
+,Size=UDim2 .new(1,-20,0,32),Font=Enum.Font.Gotham,TextColor3=Color3 .fromRGB(255,255,255),TextSize=13,TextXAlignment=
+Enum.TextXAlignment.Right,Text=''})end local v,w=k('Frame',{Position=UDim2 .new(0,0,0,0),Size=UDim2 .new(0,0,1,0),
+BackgroundColor3=Color3 .fromRGB(50,50,50),BorderSizePixel=0},{k('UICorner',{CornerRadius=UDim.new(0,4)})}),k(
+'TextButton',{Position=UDim2 .new(0.5,-6,0.5,-6),Size=UDim2 .new(0,12,0,12),BackgroundColor3=Color3 .fromRGB(55,55,55),
+BorderSizePixel=0,AutoButtonColor=false,Text=''},{k('UICorner',{CornerRadius=UDim.new(1,0)}),k('UIStroke',{Color=Color3
+.fromRGB(65,65,65),ApplyStrokeMode=Enum.ApplyStrokeMode.Border})})local x=k('Frame',{Position=UDim2 .new(0,10,0,30),Size
+=UDim2 .new(1,-20,0,4),BackgroundColor3=Color3 .fromRGB(36,36,36),BorderSizePixel=0},{k('UICorner',{CornerRadius=UDim.
+new(0,4)}),k('UIStroke',{Color=Color3 .fromRGB(55,55,55)}),v,w})local y=k('TextButton',{BackgroundColor3=Color3 .
+fromRGB(28,28,28),Size=UDim2 .new(1,0,0,42),Parent=r.Container,AutoButtonColor=false,ClipsDescendants=true,Text=''},{k(
+'UICorner',{CornerRadius=UDim.new(0,5)}),k('TextLabel',{BackgroundTransparency=1,Position=UDim2 .new(0,10,0,0),Size=
+UDim2 .new(1,-10,0,32),Font=Enum.Font.Gotham,TextColor3=Color3 .fromRGB(255,255,255),TextSize=13,TextXAlignment=Enum.
+TextXAlignment.Left,Text=q.Name}),u,x})m(w.InputBegan,function(z)if z.UserInputType==Enum.UserInputType.MouseButton1 or
+z.UserInputType==Enum.UserInputType.Touch then t=true end end)m(w.InputEnded,function(z)if z.UserInputType==Enum.
+UserInputType.MouseButton1 or z.UserInputType==Enum.UserInputType.Touch then t=false end end)m(f.InputChanged,function(z
+)if t and(z.UserInputType==Enum.UserInputType.MouseMovement or z.UserInputType==Enum.UserInputType.Touch)then local A=
+math.clamp((z.Position.X-x.AbsolutePosition.X)/x.AbsoluteSize.X,0,1)s:Set(q.Min+((q.Max-q.Min)*A))end end)m(u:
+GetPropertyChangedSignal'Text',function()u.Size=UDim2 .new(0,u.TextBounds.X+10,0,20)end)u.Size=UDim2 .new(0,u.TextBounds
+.X+10,0,20)if q.TextBoxValue then m(u.FocusLost,function()if(tonumber(u.Text))then s:Set(u.Text)else warn
+'only int allowed'end end)end function s.Set(z,A,B)z.Value=math.clamp(o(A,q.Increment),q.Min,q.Max)u.Text=tostring(z.
+Value)g:Create(w,TweenInfo.new(0.15,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Position=UDim2 .new((z.Value-q.Min)
+/(q.Max-q.Min),-6,0.5,-6)}):Play()g:Create(v,TweenInfo.new(0.15,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Size=
+UDim2 .fromScale((z.Value-q.Min)/(q.Max-q.Min),1)}):Play()if not B then return q.Callback(z.Value)end end function s.
+Visible(z,A)y.Visible=A end s:Set(s.Value,q.IgnoreFirst)return s end return p end)()end,[9]=function()local b,c,d=a(9)
+local e return(function(...)local f,g=game:GetService'TweenService',game:GetService'Players'.LocalPlayer local h,i=g:
+GetMouse(),d(c.Parent.Parent.tools)local j,k,m,n=i.Create,i.AddConnection,i.Ripple,{}n.__index=n n.__type='Toggle'
+function n.New(o,p)o.Name=o.Name or'Toggle'o.IgnoreFirst=o.IgnoreFirst or false o.Default=o.Default or false o.Callback=
+o.Callback or function()end local q,r={Value=o.Default,Type='Toggle'},j('Frame',{AnchorPoint=Vector2 .new(0.5,0.5),
+BackgroundColor3=Color3 .fromRGB(0,150,100),Position=UDim2 .new(0.5,0,0.5,0),Size=UDim2 .new(0.5,0,0.5,0),
+BackgroundTransparency=1,BorderSizePixel=0},{j('UICorner',{CornerRadius=UDim.new(0,5)}),j('ImageLabel',{AnchorPoint=
+Vector2 .new(0.5,0.5),BackgroundTransparency=1,Position=UDim2 .new(0.5,0,0.5,0),Size=UDim2 .new(1,-2,1,-2),Image=
+'http://www.roblox.com/asset/?id=6031094667',ImageTransparency=1,Name='Ico'})})local s=j('Frame',{AnchorPoint=Vector2 .
+new(1,0.5),BackgroundColor3=Color3 .fromRGB(28,28,28),Position=UDim2 .new(1,-10,0.5,0),Size=UDim2 .new(0,20,0,20),
+BackgroundTransparency=1},{j('UICorner',{CornerRadius=UDim.new(0,5)}),j('UIStroke',{Color=Color3 .fromRGB(55,55,55)}),r}
+)local t=j('TextButton',{BackgroundColor3=Color3 .fromRGB(28,28,28),Size=UDim2 .new(1,0,0,32),Parent=p.Container,
+AutoButtonColor=false,ClipsDescendants=true,Text=''},{j('UICorner',{CornerRadius=UDim.new(0,5)}),j('TextLabel',{
+BackgroundTransparency=1,Position=UDim2 .new(0,10,0,0),Size=UDim2 .new(1,-10,1,0),Font=Enum.Font.Gotham,TextColor3=
+Color3 .fromRGB(255,255,255),TextSize=13,TextXAlignment=Enum.TextXAlignment.Left,Text=o.Name}),s})k(t.MouseEnter,
+function()f:Create(t,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{BackgroundColor3=Color3 .
+fromRGB(30,30,30)}):Play()end)k(t.MouseLeave,function()f:Create(t,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.
+EasingDirection.Out),{BackgroundColor3=Color3 .fromRGB(28,28,28)}):Play()end)k(t.MouseButton1Down,function()f:Create(t,
+TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{BackgroundColor3=Color3 .fromRGB(33,33,33)}):Play()
+end)k(t.MouseButton1Up,function()f:Create(t,TweenInfo.new(0.25,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{
+BackgroundColor3=Color3 .fromRGB(30,30,30)}):Play()q:Set(not q.Value)end)function q.Set(u,v,w)u.Value=v f:Create(r,
+TweenInfo.new(0.25,Enum.EasingStyle.Quart,Enum.EasingDirection.Out),{BackgroundTransparency=u.Value and 0 or 1,Size=u.
+Value and UDim2 .new(1,0,1,0)or UDim2 .new(0.5,0,0.5,0)}):Play()f:Create(r.Ico,TweenInfo.new(0.25,Enum.EasingStyle.Quart
+,Enum.EasingDirection.Out),{ImageTransparency=u.Value and 0 or 1}):Play()if not w then return o.Callback(u.Value)end end
+function q.Visible(u,v)t.Visible=v end q:Set(q.Value,o.IgnoreFirst)return q end return n end)()end,[10]=function()local
+b,c,d=a(10)local e return(function(...)local f,g,h=game:GetService'RunService',game:GetService'TweenService',game:
+GetService'Players'.LocalPlayer local i,j=h:GetMouse(),d(c.Parent.Parent.tools)local k,m,n,o=j.Create,j.AddConnection,j.
+Ripple,{}o.__index=o o.__type='Colorpicker'function o.New(p,q)p.Name=p.Name or'Colorpicker'p.Default=p.Default or Color3
+.fromRGB(255,255,255)p.Callback=p.Callback or function()end local r,s,t,u,v=1,1,1,{Value=p.Default,Toggled=false,Type=
+'Colorpicker'}local w,x=k('ImageLabel',{Size=UDim2 .new(0,18,0,18),Position=UDim2 .new(select(3,Color3 .toHSV(u.Value)))
+,ScaleType=Enum.ScaleType.Fit,AnchorPoint=Vector2 .new(0.5,0.5),BackgroundTransparency=1,Image=
+'http://www.roblox.com/asset/?id=4805639000'}),k('ImageLabel',{Size=UDim2 .new(0,18,0,18),Position=UDim2 .new(0.5,0,1-
+select(1,Color3 .toHSV(u.Value))),ScaleType=Enum.ScaleType.Fit,AnchorPoint=Vector2 .new(0.5,0.5),BackgroundTransparency=
+1,Image='http://www.roblox.com/asset/?id=4805639000'})local y,z=k('ImageLabel',{Size=UDim2 .new(1,-25,1,0),Visible=false
+,Image='rbxassetid://4155801252'},{k('UICorner',{CornerRadius=UDim.new(0,5)}),w}),k('Frame',{Size=UDim2 .new(0,20,1,0),
+Position=UDim2 .new(1,-20,0,0),Visible=false},{k('UIGradient',{Rotation=270,Color=ColorSequence.new{
+ColorSequenceKeypoint.new(0,Color3 .fromRGB(255,0,4)),ColorSequenceKeypoint.new(0.2,Color3 .fromRGB(234,255,0)),
+ColorSequenceKeypoint.new(0.4,Color3 .fromRGB(21,255,0)),ColorSequenceKeypoint.new(0.6,Color3 .fromRGB(0,255,255)),
+ColorSequenceKeypoint.new(0.8,Color3 .fromRGB(0,17,255)),ColorSequenceKeypoint.new(0.9,Color3 .fromRGB(255,0,251)),
+ColorSequenceKeypoint.new(1,Color3 .fromRGB(255,0,4))}}),k('UICorner',{CornerRadius=UDim.new(0,5)}),x})local A,B=k(
+'Frame',{Position=UDim2 .new(0,0,0,32),Size=UDim2 .new(1,0,1,-32),BackgroundTransparency=1,ClipsDescendants=true},{z,y,
+k('UIPadding',{PaddingLeft=UDim.new(0,35),PaddingRight=UDim.new(0,35),PaddingBottom=UDim.new(0,8),PaddingTop=UDim.new(0,
+4)})}),k('Frame',{AnchorPoint=Vector2 .new(1,0.5),BackgroundColor3=Color3 .fromRGB(255,255,255),Position=UDim2 .new(1,-
+10,0.5,0),Size=UDim2 .new(0,20,0,20)},{k('UICorner',{CornerRadius=UDim.new(0,5)}),k('UIStroke',{Color=Color3 .fromRGB(55
+,55,55)})})local C=k('TextButton',{BackgroundTransparency=1,Size=UDim2 .new(1,0,0,32),AutoButtonColor=false,
+ClipsDescendants=true,Text=''},{k('TextLabel',{BackgroundTransparency=1,Position=UDim2 .new(0,10,0,0),Size=UDim2 .new(1,
+-10,1,0),Font=Enum.Font.Gotham,TextColor3=Color3 .fromRGB(255,255,255),TextSize=13,TextXAlignment=Enum.TextXAlignment.
+Left,Text=p.Name}),B})local D=k('TextButton',{BackgroundColor3=Color3 .fromRGB(28,28,28),Size=UDim2 .new(1,0,0,32),
+Parent=q.Container,AutoButtonColor=false,ClipsDescendants=true,Text=''},{k('UICorner',{CornerRadius=UDim.new(0,5)}),C,A}
+)local function E()B.BackgroundColor3=Color3 .fromHSV(r,s,t)y.BackgroundColor3=Color3 .fromHSV(r,1,1)u:Set(B.
+BackgroundColor3)p.Callback(B.BackgroundColor3)end m(C.MouseButton1Click,function()u.Toggled=not u.Toggled g:Create(D,
+TweenInfo.new(0.15,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Size=u.Toggled and UDim2 .new(1,0,0,142)or UDim2 .
+new(1,0,0,32)}):Play()y.Visible=u.Toggled z.Visible=u.Toggled end)r=1-(math.clamp(x.AbsolutePosition.Y-z.
+AbsolutePosition.Y,0,z.AbsoluteSize.Y)/z.AbsoluteSize.Y)s=(math.clamp(w.AbsolutePosition.X-y.AbsolutePosition.X,0,y.
+AbsoluteSize.X)/y.AbsoluteSize.X)t=1-(math.clamp(w.AbsolutePosition.Y-y.AbsolutePosition.Y,0,y.AbsoluteSize.Y)/y.
+AbsoluteSize.Y)u.Value=p.Default B.BackgroundColor3=u.Value y.BackgroundColor3=u.Value p.Callback(u.Value)m(y.InputBegan
+,function(F)if F.UserInputType==Enum.UserInputType.MouseButton1 then if v then v:Disconnect()end v=m(f.RenderStepped,
+function()local G,H=(math.clamp(i.X-y.AbsolutePosition.X,0,y.AbsoluteSize.X)/y.AbsoluteSize.X),(math.clamp(i.Y-y.
+AbsolutePosition.Y,0,y.AbsoluteSize.Y)/y.AbsoluteSize.Y)w.Position=UDim2 .new(G,0,H,0)s=G t=1-H E()end)end end)m(y.
+InputEnded,function(F)if F.UserInputType==Enum.UserInputType.MouseButton1 then if v then v:Disconnect()end end end)m(z.
+InputBegan,function(F)if F.UserInputType==Enum.UserInputType.MouseButton1 then if HueInput then HueInput:Disconnect()end
+HueInput=m(f.RenderStepped,function()local G=(math.clamp(i.Y-z.AbsolutePosition.Y,0,z.AbsoluteSize.Y)/z.AbsoluteSize.Y)x
+.Position=UDim2 .new(0.5,0,G,0)r=1-G E()end)end end)m(z.InputEnded,function(F)if F.UserInputType==Enum.UserInputType.
+MouseButton1 then if HueInput then HueInput:Disconnect()end end end)function u.Set(F,G)u.Value=G B.BackgroundColor3=u.
+Value p.Callback(u.Value)end function u.Visible(F,G)D.Visible=G end return u end return o end)()end,[11]=function()local
+b,c,d=a(11)local e return(function(...)local f,g=game:GetService'TweenService',d(c.Parent.Parent.tools)local h,i,j,k=g.
+Create,g.AddConnection,g.Ripple,{}k.__index=k k.__type='Textbox'function k.New(m,n)m.Name=m.Name or'Textbox'm.Default=m.
+Default or''m.TextDisappear=m.TextDisappear or false m.Callback=m.Callback or function()end local o=h('TextBox',{
+AnchorPoint=Vector2 .new(1,0.5),BackgroundColor3=Color3 .fromRGB(36,36,36),Position=UDim2 .new(1,-10,0.5,0),Size=UDim2 .
+new(0,20,0,20),TextColor3=Color3 .fromRGB(255,255,255),PlaceholderColor3=Color3 .fromRGB(210,210,210),PlaceholderText=
+'Write here...',TextXAlignment=Enum.TextXAlignment.Right,Text=m.Default,Font=Enum.Font.Gotham,TextSize=13,
+ClearTextOnFocus=false},{h('UICorner',{CornerRadius=UDim.new(0,5)}),h('UIPadding',{PaddingLeft=UDim.new(0,5),
+PaddingRight=UDim.new(0,5)})})local p=h('TextButton',{BackgroundColor3=Color3 .fromRGB(28,28,28),Size=UDim2 .new(1,0,0,
+32),Parent=n.Container,AutoButtonColor=false,ClipsDescendants=true,Text=''},{h('UICorner',{CornerRadius=UDim.new(0,5)}),
+h('TextLabel',{BackgroundTransparency=1,Position=UDim2 .new(0,10,0,0),Size=UDim2 .new(1,-10,1,0),Font=Enum.Font.Gotham,
+TextColor3=Color3 .fromRGB(255,255,255),TextSize=13,TextXAlignment=Enum.TextXAlignment.Left,Text=m.Name}),o})i(p.
+MouseButton1Click,function()o:CaptureFocus()end)i(o.FocusLost,function()m.Callback(o.Text)if m.TextDisappear then o.Text
+=''end end)i(o:GetPropertyChangedSignal'Text',function()o.Size=UDim2 .new(0,o.TextBounds.X+10,0,20)end)o.Size=UDim2 .
+new(0,o.TextBounds.X+10,0,20)end return k end)()end,[12]=function()local b,c,d=a(12)local e return(function(...)local f,
+g=game:GetService'TweenService',game:GetService'Players'.LocalPlayer local h,i=g:GetMouse(),{Signals={}}function i.
+AddConnection(j,k)table.insert(i.Signals,j:Connect(k))end function i.Create(j,k,m)local n=Instance.new(j)for o,p in next
+,k or{}do n[o]=p end for q,r in next,m or{}do r.Parent=n end return n end function i.Ripple(j)local k=i.Create(
+'ImageLabel',{Parent=j,BackgroundColor3=Color3 .fromRGB(255,255,255),BackgroundTransparency=1,Image=
+'rbxassetid://266543268',ImageColor3=Color3 .fromRGB(210,210,210),ImageTransparency=0.88})k.Position=UDim2 .new(0,h.X-k.
+AbsolutePosition.X,0,h.Y-k.AbsolutePosition.Y)local m=j.AbsoluteSize.X/1.5 f:Create(k,TweenInfo.new(0.5),{Position=UDim2
+.fromScale(math.clamp(h.X-j.AbsolutePosition.X,0,j.AbsoluteSize.X)/j.AbsoluteSize.X,j,math.clamp(h.Y-j.AbsolutePosition.
+Y,0,j.AbsoluteSize.Y)/j.AbsoluteSize.Y)-UDim2 .fromOffset(m/2,m/2),ImageTransparency=1,Size=UDim2 .fromOffset(m,m)}):
+Play()spawn(function()wait(0.5)k:Destroy()end)end return i end)()end},{{1,2,{'NextUI'},{{2,1,{'components'},{{4,2,{'tab'
+}},{3,2,{'section'}}}},{5,2,{'elements'},{{8,2,{'slider'}},{10,2,{'colorpicker'}},{6,2,{'button'}},{7,2,{'dropdown'}},{
+11,2,{'textbox'}},{9,2,{'toggle'}}}},{12,2,{'tools'}}}}},'0.4.1','WaxRuntime',string,task,setmetatable,error,next,table,
+unpack,coroutine,script,type,require,pcall,tostring,tonumber,_VERSION local y,z,A,B,C,D,E=k.insert,k.remove,k.freeze or
+function(y)return y end,n.wrap,f.sub,f.match,f.gmatch if w and C(w,1,4)=='Lune'then local F,G=t(s,'@lune/task')if F and
+G then g=G end end local F=g and g.defer local G,H,I,J,K,L,M,N,O=F or function(G,...)B(G)(...)end,{[1]='Folder',[2]=
+'ModuleScript',[3]='Script',[4]='LocalScript',[5]='StringValue'},{},{},{},{},{},{},{}local P,Q={GetFullName={{},function
+(P)local Q,R=P.Name,P.Parent while R do Q=R.Name..'.'..Q R=R.Parent end return Q end},GetChildren={{},function(P)local Q
+={}for R in j,O[P]do y(Q,R)end return Q end},GetDescendants={{},function(P)local Q={}for R in j,O[P]do y(Q,R)for S,T in
+j,R:GetDescendants()do y(Q,T)end end return Q end},FindFirstChild={{'string','boolean?'},function(P,Q,R)local S=O[P]for
+T in j,S do if T.Name==Q then return T end end if R then for U in j,S do return U:FindFirstChild(Q,true)end end end},
+FindFirstAncestor={{'string'},function(P,Q)local R=P.Parent while R do if R.Name==Q then return R end R=R.Parent end end
+},WaitForChild={{'string','number?'},function(P,Q)return P:FindFirstChild(Q)end}},{}for R,S in j,P do local T,U,V=S[1],S
+[2],{}for W,X in j,T do local Y,Z=D(X,'^([^%?]+)(%??)')V[W]={Y,Z}end Q[R]=function(Y,...)if not O[Y]then i(
+"Expected ':' not '.' calling member function "..R,2)end local Z={...}for _,aa in j,V do local ab=Z[_]local ac,ad,ae=r(
+ab),aa[1],aa[2]if ab==nil and not ae then i('Argument '..ab..' missing or nil',3)end if ad~='any'and ac~=ad and not(ac==
+'nil'and ae)then i('Argument '.._..' expects type "'..ad..'", got "'..ac..'"',2)end end return U(Y,...)end end
+local function aa(ab,ac,ad)local ae,T=(h({},{__mode='k'}))local function U(V)i(V..' is not a valid (virtual) member of '
+..ab..' "'..ac..'"',3)end local function V(W)i('Unable to assign (virtual) property '..W..'. Property is read only',3)
+end local W,X={},{}X.__metatable=false X.__index=function(Y,Z)if Z=='ClassName'then return ab elseif Z=='Name'then
+return ac elseif Z=='Parent'then return ad elseif ab=='StringValue'and Z=='Value'then return T else local _=Q[Z]if _
+then return _ end end for _ in j,ae do if _.Name==Z then return _ end end U(Z)end X.__newindex=function(Y,Z,_)if Z==
+'ClassName'then V(Z)elseif Z=='Name'then ac=_ elseif Z=='Parent'then if _==W then return end if ad~=nil then O[ad][W]=
+nil end ad=_ if _~=nil then O[_][W]=true end elseif ab=='StringValue'and Z=='Value'then T=_ else U(Z)end end X.
+__tostring=function()return ac end h(W,X)O[W]=ae if ad~=nil then O[ad][W]=true end return W end local function ab(ac,ad)
+local ae,T,U,V=ac[1],ac[2],ac[3],ac[4]local W=H[T]local X=U and z(U,1)or W local Y=aa(W,X,ad)I[ae]=Y if U then for Z,_
+in j,U do Y[Z]=_ end end if V then for Z,_ in j,V do ab(_,Y)end end return Y end local ac=aa('Folder','['..e..']')for ad
+,ae in j,c do ab(ae,ac)end for T,U in j,b do local V=I[T]J[V]=U K[V]=T local W=V.ClassName if W=='LocalScript'or W==
+'Script'then y(M,V)end end local function V(W)local X,Y=W.ClassName,L[W]if Y and X=='ModuleScript'then return m(Y)end
+local Z=J[W]local function _(af)af=u(af)local ag,ah,ai=W:GetFullName(),D(af,'[^:]+:(%d+): (.+)')if not ah or not x then
+return ag..':*: '..(ai or af)end ah=v(ah)local aj=K[W]local ak=x[aj]local al=ah-ak+1 if al<0 then al='?'end return ag..
+':'..al..': '..ai end if X=='LocalScript'or X=='Script'then local af,ag=t(Z)if not af then i(_(ag),0)end else local af={
+t(Z)}local ag=z(af,1)if not ag then local ah=z(af,1)i(_(ah),0)end L[W]=af return m(af)end end function a(af)local ag=I[
+af]local function ah(ai,...)local aj={t(ai,...)}local ak=z(aj,1)if not ak then i(aj[1],3)end return m(aj)end local ai=A(
+h({},{__index=N,__newindex=function(ai,aj,ak)N[aj]=ak end,__len=function()return#N end,__iter=function()return j,N end})
+)local aj,ak=A{version=d,envname=e,shared=ai,script=q,require=s},ag local function al(W,...)local X,Y,Z=r(W),
+'Attempted to call require with a non-ModuleScript','Attempted to call require with self'if X=='table'and O[W]then if W.
+ClassName~='ModuleScript'then i(Y,2)elseif W==ag then i(Z,2)end return V(W)elseif X=='string'and C(W,1,1)~='@'then if#W
+==0 then i('Attempted to call require with empty string',2)end local _=ag if C(W,1,1)=='/'then _=ac elseif C(W,1,2)==
+'./'then W=C(W,3)end local am for an in E(W,'([^/]*)/?')do local ao=an if an=='..'then ao='Parent'end if ao~=''then
+local ap=_:FindFirstChild(ao)if not ap then local aq=_.Parent if aq then ap=aq:FindFirstChild(ao)end end if ap then _=ap
+elseif an~=am and an~='init'and an~='init.server'and an~='init.client'then i('Virtual script path "'..W..'" not found',2
+)end end am=an end if _.ClassName~='ModuleScript'then i(Y,2)elseif _==ag then i(Z,2)end return V(_)end return ah(s,W,...
+)end return aj,ak,al end for af,ag in j,M do G(V,ag)end return V(ac:GetChildren()[1])
